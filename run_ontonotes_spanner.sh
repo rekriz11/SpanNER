@@ -1,6 +1,6 @@
 export PYTHONPATH="$PWD"
 
-DATA_DIR="data/conll03"
+
 PRETRAINED="bert-large-uncased"
 BERT_DIR="/exp/${USER}/models/${PRETRAINED}/"
 
@@ -8,6 +8,7 @@ BERT_DIR="/exp/${USER}/models/${PRETRAINED}/"
 
 
 dataname=en_ontonotes
+DATA_DIR="/exp/${USER}/data/ner/${dataname}/original/"
 n_class=5
 BERT_DROPOUT=0.2
 MODEL_DROPOUT=0.2
