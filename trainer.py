@@ -516,11 +516,10 @@ def main():
     if 'conll' in args.dataname:
         label2idx = {"O": 0, "ORG": 1, "PER": 2, "LOC": 3, "MISC": 4}
     elif 'note' in args.dataname:
-        label2idx = {'O': 0, 'PERSON': 1, 'ORG': 2, 'GPE': 3, 'DATE': 4, 'NORP': 5, 'CARDINAL': 6, 'TIME': 7,
-                     'LOC': 8,
-                     'FAC': 9, 'PRODUCT': 10, 'WORK_OF_ART': 11, 'MONEY': 12, 'ORDINAL': 13, 'QUANTITY': 14,
-                     'EVENT': 15,
-                     'PERCENT': 16, 'LAW': 17, 'LANGUAGE': 18}
+        label2idx = {'O': 0, 'PER': 1, 'ORG': 2, 'GPE': 3, 'LOC': 4}
+        #label2idx = {'O': 0, 'PER': 1, 'ORG': 2, 'GPE': 3, 'DATE': 4, 'NORP': 5, 'CARDINAL': 6, 'TIME': 7,
+        #             'LOC': 8, 'FAC': 9, 'PRODUCT': 10, 'WORK_OF_ART': 11, 'MONEY': 12, 'ORDINAL': 13, 'QUANTITY': 14,
+        #             'EVENT': 15, 'PERCENT': 16, 'LAW': 17, 'LANGUAGE': 18}
     elif args.dataname == 'wnut16':
         label2idx = {'O': 0, 'loc':1, 'facility':2,'movie':3,'company':4,'product':5,'person':6,'other':7,
                      'tvshow':8,'musicartist':9,'sportsteam':10}

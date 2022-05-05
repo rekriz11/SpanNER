@@ -2,12 +2,12 @@ export PYTHONPATH="$PWD"
 
 DATA_DIR="data/conll03"
 PRETRAINED="bert-large-uncased"
-BERT_DIR="/home/jlfu/Projects/"${PRETRAINED}
+BERT_DIR="/exp/${USER}/models/${PRETRAINED}/"
 
 
 
 
-dataname=conll03
+dataname=en_ontonotes
 n_class=5
 BERT_DROPOUT=0.2
 MODEL_DROPOUT=0.2
@@ -26,7 +26,7 @@ use_spanLen=True
 use_morph=True
 use_span_weight=True
 neg_span_weight=0.5
-gpus="7,"
+gpus="4,"
 
 
 
