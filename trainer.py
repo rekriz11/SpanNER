@@ -471,7 +471,7 @@ class BertNerTagger(pl.LightningModule):
         #                         pad_to_maxlen=False
         #                         )
 
-        vocab_path = os.path.join(self.bert_dir, "vocab.txt")
+        vocab_path = os.path.join(self.data_dir, self.bert_dir + "-vocab.txt")
         print("use BertWordPieceTokenizer as the tokenizer ")
         dataset = BERTNERDataset(self.args, json_path=json_path,
                                  tokenizer=BertWordPieceTokenizer(vocab_path),

@@ -2,7 +2,6 @@
 source "/exp/${USER}/venv/bin/activate"
 module load cuda11.2/toolkit
 export PYTHONPATH="/exp/${USER}/code/SpanNER/"
-echo $PYTHONPATH
 cd /exp/${USER}/code/SpanNER/
 
 DATA_DIR="/exp/${USER}/data/ner/en_ontonotes/spanner/"
