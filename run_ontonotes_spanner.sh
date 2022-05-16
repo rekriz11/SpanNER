@@ -1,7 +1,7 @@
 export PYTHONPATH="$PWD"
 
-DATA_DIR="data/conll03"
-PRETRAINED="hfl/chinese-bert-wwm-ext"
+DATA_DIR="/exp/${USER}/data/ner/en_ontonotes/spanner/"
+PRETRAINED="bert-large-uncased"
 
 #BERT_DIR="/exp/${USER}/spanner/bert_dir/"${PRETRAINED}
 BERT_DIR=$PRETRAINED
@@ -40,7 +40,7 @@ modelName="spanner_"${PRETRAINED}_spMLen${max_span_len}_usePrune${use_prune}_use
 idtest=${dataname}_${modelName}
 param_name=epoch${max_epochs}_batchsize${batchSize}_lr${LR}_maxlen${MAXLEN}
 
-OUTPUT_DIR="/exp/${USER}/spanner/$dataname/${modelName}"
+OUTPUT_DIR="/exp/${USER}/models/ner/spanner_${dataname}_${modelName}/"
 mkdir -p $OUTPUT_DIR
 
 python trainer.py \
