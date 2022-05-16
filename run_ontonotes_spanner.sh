@@ -54,7 +54,6 @@ python trainer.py \
 --precision=16 \
 --progress_bar_refresh_rate 1 \
 --lr $LR \
---accelerator=dp \
 --val_check_interval 1.0 \
 --accumulate_grad_batches 1 \
 --default_root_dir $OUTPUT_DIR \
@@ -75,6 +74,8 @@ python trainer.py \
 --param_name $param_name \
 --gradient_clip_val $MAXNORM \
 --optimizer "adamw"
+
+#--accelerator=dp \
 
 
 
