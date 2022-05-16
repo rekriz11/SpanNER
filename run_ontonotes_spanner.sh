@@ -73,8 +73,9 @@ python trainer.py \
 --neg_span_weight $neg_span_weight \
 --param_name $param_name \
 --gradient_clip_val $MAXNORM \
---accelerator=dp \
 --optimizer "adamw"
+
+#--accelerator=dp \
 
 
 
