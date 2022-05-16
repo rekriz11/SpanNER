@@ -9,7 +9,7 @@ BERT_DIR=$PRETRAINED
 
 
 
-dataname=conll03
+dataname=ontonotes
 n_class=5
 BERT_DROPOUT=0.2
 MODEL_DROPOUT=0.2
