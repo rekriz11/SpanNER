@@ -1,4 +1,5 @@
-export PYTHONPATH="$PWD"
+export PYTHONPATH="${PWD}"
+echo $PWD
 
 DATA_DIR="/exp/${USER}/data/ner/en_ontonotes/spanner/"
 PRETRAINED="bert-large-uncased"
@@ -78,4 +79,4 @@ python trainer.py \
 #--accelerator=dp \
 
 
-
+# qsub -j y -l h_rt=24:00:00 -q gpu.q -l gpu=1 run_ontonotes_spanner.sh
