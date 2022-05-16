@@ -1,5 +1,7 @@
+#!/bin/sh
+source "/exp/rkriz/venv/bin/activate"
+module load cuda11.2/toolkit
 export PYTHONPATH="${PWD}"
-echo $PWD
 
 DATA_DIR="/exp/${USER}/data/ner/en_ontonotes/spanner/"
 PRETRAINED="bert-large-uncased"
