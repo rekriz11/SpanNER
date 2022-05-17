@@ -291,11 +291,11 @@ class BERTNERDataset(Dataset):
 	def convert2tokenIdx(self, words, tokens, type_ids, offsets, span_idxs, span_idxLab):
 		print("Words: {}\ntokens: {}\ntype_ids: {}\noffsets: {}\nspan_idx: {}\nspan_idxLab: {}".format(
 			words, tokens, type_ids, offsets, span_idxs, span_idxLab))
-		a = bbb
 		# convert the all the span_idxs from word-level to token-level
 		max_length = self.max_length
 		sidxs = [x1 + sum([len(w) for w in words[:x1]]) for (x1, x2) in span_idxs]
 		eidxs = [x2 + sum([len(w) for w in words[:x2 + 1]]) for (x1, x2) in span_idxs]
+		print("sidx: {}\neidxs: {}".format(sidx, eidx))
 
 		span_idxs_new_label = {}
 		for ns, ne, ose in zip(sidxs, eidxs, span_idxs):
@@ -319,6 +319,10 @@ class BERTNERDataset(Dataset):
 				continue
 			origin_offset2token_sidx[token_start] = token_idx
 			origin_offset2token_eidx[token_end] = token_idx
+
+		print("origin_offset2token_sidx: {}".format(origin_offset2token_sidx))
+		print("origin_offset2token_eidx: {}".format(origin_offset2token_eidx))
+		a = bbb
 
 		# convert the position from character-level to token-level.
 		span_new_sidxs = []
