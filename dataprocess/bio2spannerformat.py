@@ -131,7 +131,7 @@ def read_data(corpus_type, fn, column_no=-1, delimiter =' '):
 				tag_sequences.append(curr_tags)
 				if "Sharia" in curr_words and "transforming" in curr_words:
 					print("\ncurr_words: {}\ncurr_tags: {}".format(curr_words, curr_tags))
-					print("combined: {}".format(" ".join(curr_words)))
+					print("combined: <{}>".format(" ".join(curr_words)))
 				curr_words = list()
 				curr_tags = list()
 			continue
