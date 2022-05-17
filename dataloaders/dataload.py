@@ -290,7 +290,7 @@ class BERTNERDataset(Dataset):
 
 	def convert2tokenIdx(self, words, tokens, type_ids, offsets, span_idxs, span_idxLab):
 		print("Words: {}\ntokens: {}\ntype_ids: {}\noffsets: {}\nspan_idx: {}\nspan_idxLab: {}".format(
-			words, tokens, type_ids, offsets, span_idxs, span_idxLab)
+			words, tokens, type_ids, offsets, span_idxs, span_idxLab))
 		a = bbb
 		# convert the all the span_idxs from word-level to token-level
 		max_length = self.max_length
