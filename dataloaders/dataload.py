@@ -295,7 +295,7 @@ class BERTNERDataset(Dataset):
 		max_length = self.max_length
 		sidxs = [x1 + sum([len(w) for w in words[:x1]]) for (x1, x2) in span_idxs]
 		eidxs = [x2 + sum([len(w) for w in words[:x2 + 1]]) for (x1, x2) in span_idxs]
-		print("sidx: {}\neidxs: {}".format(sidx, eidx))
+		print("\nsidxs: {}\neidxs: {}".format(sidxs, eidxs))
 
 		span_idxs_new_label = {}
 		for ns, ne, ose in zip(sidxs, eidxs, span_idxs):
@@ -334,9 +334,13 @@ class BERTNERDataset(Dataset):
 				if origin_offset2token_eidx[end] > max_length - 1 or origin_offset2token_sidx[start] > max_length - 1:
 					continue
 			except KeyError:
-				print("\n***ERROR***\norigin_offset2token_eidx: {}".format(origin_offset2token_eidx))
+				print("\n***ERROR***\n")
+				print("Words: {}\ntokens: {}\ntype_ids: {}\noffsets: {}\nspan_idx: {}\nspan_idxLab: {}".format(
+					words, tokens, type_ids, offsets, span_idxs, span_idxLab))
+				print("\nsidxs: {}\neidxs: {}".format(sidxs, eidxs))
+				print("\norigin_offset2token_eidx: {}".format(origin_offset2token_eidx))
 				print("origin_offset2token_sidx: {}".format(origin_offset2token_sidx))
-				print("start: {}, end: {}, max_length: {}".format(start, end, max_length))
+				print("\nstart: {}, end: {}, max_length: {}".format(start, end, max_length))
 				a = bbb
 			span_new_sidxs.append(origin_offset2token_sidx[start])
 			span_new_eidxs.append(origin_offset2token_eidx[end])
