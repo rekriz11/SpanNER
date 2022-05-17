@@ -129,6 +129,8 @@ def read_data(corpus_type, fn, column_no=-1, delimiter =' '):
 			if len(curr_words) > 0:
 				word_sequences.append(curr_words)
 				tag_sequences.append(curr_tags)
+				if "Sharia" in curr_words:
+					print("\ncurr_words: {}\ncurr_tags: {}".format(curr_words, curr_tags))
 				curr_words = list()
 				curr_tags = list()
 			continue
