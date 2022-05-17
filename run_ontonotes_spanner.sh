@@ -1,4 +1,5 @@
 #!/bin/sh
+conda init bash
 conda activate myenv3.6
 module load cuda11.2/toolkit
 export PYTHONPATH="/exp/${USER}/code/SpanNER/"
