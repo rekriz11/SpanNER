@@ -1,5 +1,5 @@
 #!/bin/sh
-source /home/${USER}/.bashrc
+source ~/.bashrc
 source activate myenv3.6
 
 module load cuda11.2/toolkit
