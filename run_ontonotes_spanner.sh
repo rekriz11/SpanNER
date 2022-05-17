@@ -1,7 +1,12 @@
 #!/bin/sh
+source /home/${USER}/.bashrc
+source activate myenv3.6
+
 module load cuda11.2/toolkit
 export PYTHONPATH="/exp/${USER}/code/SpanNER/"
 cd /exp/${USER}/code/SpanNER/
+
+
 
 DATA_DIR="/exp/${USER}/data/ner/en_ontonotes/spanner/"
 PRETRAINED="bert-large-uncased"
@@ -78,4 +83,4 @@ python trainer.py \
 #--accelerator=dp \
 
 
-# qsub -j y -l h_rt=24:00:00 -q gpu.q -l gpu=4 run_ontonotes_spanner.sh
+# qsub -j y -l h_rt=24:00:00 -q gpu.q -l gpu=8 run_ontonotes_spanner.sh
