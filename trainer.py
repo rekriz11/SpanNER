@@ -501,6 +501,7 @@ class BertNerTagger(pl.LightningModule):
 def main():
     """main"""
     # parser = get_parser()
+    #import pdb; pdb.set_trace()
 
     # add model specific args
     parser = BertNerTagger.get_parser()

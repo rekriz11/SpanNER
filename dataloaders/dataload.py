@@ -328,6 +328,7 @@ class BERTNERDataset(Dataset):
 					continue
 			except KeyError:
 				print("\n***ERROR***\norigin_offset2token_eidx: {}".format(origin_offset2token_eidx))
+				print("origin_offset2token_sidx: {}".format(origin_offset2token_sidx))
 				print("start: {}, end: {}, max_length: {}".format(start, end, max_length))
 				a = bbb
 			span_new_sidxs.append(origin_offset2token_sidx[start])
