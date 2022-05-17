@@ -1,5 +1,5 @@
 #!/bin/sh
-source "/exp/${USER}/venv3.6/bin/activate"
+conda activate myenv3.6
 module load cuda11.2/toolkit
 export PYTHONPATH="/exp/${USER}/code/SpanNER/"
 cd /exp/${USER}/code/SpanNER/
