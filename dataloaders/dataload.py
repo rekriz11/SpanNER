@@ -323,9 +323,13 @@ class BERTNERDataset(Dataset):
 		n_span_keep = 0
 
 		for start, end in zip(sidxs, eidxs):
-			if origin_offset2token_eidx[end] > max_length - 1 or origin_offset2token_sidx[
-				start] > max_length - 1:
-				continue
+			try:
+				if origin_offset2token_eidx[end] > max_length - 1 or origin_offset2token_sidx[start] > max_length - 1:
+					continue
+			except KeyError:
+				print("\n***ERROR***\norigin_offset2token_eidx: {}".format(origin_offset2token_eidx))
+				print("start: {}, end: {}")
+				a = bbb
 			span_new_sidxs.append(origin_offset2token_sidx[start])
 			span_new_eidxs.append(origin_offset2token_eidx[end])
 			n_span_keep += 1
