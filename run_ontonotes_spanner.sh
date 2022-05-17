@@ -34,9 +34,9 @@ use_morph=True
 use_span_weight=True
 neg_span_weight=0.5
 #gpus="7,"
-gpus=${CUDA_VISIBLE_DEVICES}
+#gpus=${CUDA_VISIBLE_DEVICES}
+gpus=1
 echo "GPUS: ${gpus}"
-#gpus=8
 
 
 #max_epochs=30
@@ -83,4 +83,4 @@ python trainer.py \
 #--accelerator=dp \
 
 
-# qsub -j y -l h_rt=24:00:00 -q gpu.q -l gpu=8 run_ontonotes_spanner.sh
+# qsub -j y -l h_rt=24:00:00 -q gpu.q -l gpu=1 run_ontonotes_spanner.sh
