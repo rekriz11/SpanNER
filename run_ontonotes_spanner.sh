@@ -57,7 +57,7 @@ python trainer.py \
 --gpus=$gpus \
 --workers=10 \
 --precision=16 \
---progress_bar_refresh_rate 0 \
+--progress_bar_refresh_rate 100 \
 --lr $LR \
 --val_check_interval 1.0 \
 --accumulate_grad_batches 1 \
