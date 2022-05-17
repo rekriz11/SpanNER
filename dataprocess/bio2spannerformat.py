@@ -144,9 +144,9 @@ def read_data(corpus_type, fn, column_no=-1, delimiter =' '):
 		if word =='❤ ':
 			word="[emoji]"
 		word =word.strip()
-		curr_words.append(word)
+		curr_words.append(word.strip())
 		curr_tags.append(tag)
-		total_word_sequences.append(word)
+		total_word_sequences.append(word.strip())
 		total_tag_sequences.append(tag)
 		if k == len(lines) - 1:
 			word_sequences.append(curr_words)
