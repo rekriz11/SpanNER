@@ -185,8 +185,11 @@ if __name__ == '__main__':
 		fpath_bio = fpath_bio1 +'/' +suffix+'.txt'
 
 		all_data = keep_spanPred_data(dataname,fpath_bio, column_no,delimiter)
+		print(all_data[:10])
+		print("\n")
 		if suffix != 'test':
 			random.shuffle(all_data)
+		print(all_data[:10])
 		dump_file_path = dump_path + 'spanner.' + suffix
 		with open(dump_file_path, "w") as f:
 			json.dump(all_data, f, sort_keys=True, ensure_ascii=False, indent=2)
