@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
-SRC_DIR=/exp/${USER}/data/ner/en_ontonotes/original/
-TGT_DIR=/exp/${USER}/data/ner/en_ontonotes/spanner/
+SRC_DIR=/exp/${USER}/data/ner/en_ontonotes/original_sampling_100/
+TGT_DIR=/exp/${USER}/data/ner/en_ontonotes/spanner_sampling_100/
 mkdir -p ${TGT_DIR}
 
 python bio2spanner.py --src ${SRC_DIR}/train.txt --dst ${TGT_DIR}/spanner.train
