@@ -1,5 +1,5 @@
 import numpy as np
-import json
+import json, random
 import codecs
 from collections import Counter
 import os
@@ -162,6 +162,7 @@ def read_data(corpus_type, fn, column_no=-1, delimiter =' '):
 
 
 if __name__ == '__main__':
+	random.seed(37)
 	dataname = 'conll03'
 
 	suffixs = ['train', 'dev', 'test']
@@ -184,6 +185,8 @@ if __name__ == '__main__':
 		fpath_bio = fpath_bio1 +'/' +suffix+'.txt'
 
 		all_data = keep_spanPred_data(dataname,fpath_bio, column_no,delimiter)
+		if suffix != 'test':
+			random.shuffle(all_data)
 		dump_file_path = dump_path + 'spanner.' + suffix
 		with open(dump_file_path, "w") as f:
 			json.dump(all_data, f, sort_keys=True, ensure_ascii=False, indent=2)
