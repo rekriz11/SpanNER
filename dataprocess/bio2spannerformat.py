@@ -78,6 +78,7 @@ def keep_spanPred_data(dataname,fpath_bio,column_no,delimiter):
 			all_labs.append(lab)
 
 	counter = Counter(all_labs).most_common()
+	print(counter)
 
 	tag_dic = {"O":0}
 	for i,elem in enumerate(counter):
