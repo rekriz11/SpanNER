@@ -3,6 +3,7 @@ import json
 import codecs
 from collections import Counter
 import os
+from tqdm import tqdm
 
 
 def get_chunk_type(tok):
@@ -86,7 +87,7 @@ def keep_spanPred_data(dataname,fpath_bio,column_no,delimiter):
 
 
 	all_datas = []
-	for i, (tokens,labs) in enumerate(zip(word_seqs_sent, trueTag_seqs_sent)):
+	for i, (tokens,labs) in tqdm(enumerate(zip(word_seqs_sent, trueTag_seqs_sent)), desc="Converting tokens..."):
 		chunks = get_chunks(labs)
 		context = ' '.join(tokens)
 		if "[emoji]  " in context:
@@ -120,7 +121,7 @@ def read_data(corpus_type, fn, column_no=-1, delimiter =' '):
 		lines = f.readlines()
 	curr_words = list()
 	curr_tags = list()
-	for k in range(len(lines)):
+	for k in tqdm(range(len(lines)), desc="Reading lines..."):
 		line = lines[k].strip()
 		if "❤ ️" in line:
 			line =line.replace("❤ ️️", "[emoji]")
