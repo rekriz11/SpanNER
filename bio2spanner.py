@@ -9,11 +9,8 @@ def main(args):
   print(f"Reading IOB2 file: {args.src}")
   data = keep_spanPred_data(args.dataname, args.src, args.column, args.delimiter)
 
-  print(data[:10])
-  print()
   if args.split != 'test':
     random.shuffle(data)
-    print(data[:10])
 
   with open(args.dst, 'w') as fp:
     json.dump(data, fp, sort_keys=True, ensure_ascii=False, indent=2)
