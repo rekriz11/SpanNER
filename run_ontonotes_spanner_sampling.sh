@@ -57,7 +57,7 @@ python trainer.py \
 --gpus=$gpus \
 --workers=10 \
 --precision=16 \
---progress_bar_refresh_rate 100 \
+--progress_bar_refresh_rate 1000 \
 --lr $LR \
 --val_check_interval 1.0 \
 --accumulate_grad_batches 1 \
@@ -83,4 +83,4 @@ python trainer.py \
 #--accelerator=dp \
 
 
-# qsub -j y -l h_rt=24:00:00 -q gpu.q -l gpu=1 run_ontonotes_spanner.sh
+# qsub -j y -l h_rt=96:00:00 -q gpu.q -l gpu=1 run_ontonotes_spanner_sampling.sh
