@@ -37,9 +37,8 @@ gpus=1
 echo "GPUS: ${gpus}"
 
 
-#max_epochs=30
-max_epochs=1
-modelName="spanner_"${PRETRAINED}_spMLen${max_span_len}_usePrune${use_prune}_useSpLen${use_spanLen}_useSpMorph${use_morph}_SpWt${use_span_weight}_value${neg_span_weight}
+max_epochs=30
+modelName="spanner_${PRETRAINED}_distilled"
 idtest=${dataname}_${modelName}
 param_name=epoch${max_epochs}_batchsize${batchSize}_lr${LR}_maxlen${MAXLEN}
 

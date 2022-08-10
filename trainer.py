@@ -157,10 +157,6 @@ class BertNerTagger(pl.LightningModule):
                             help="range: [0,1.0], the weight of negative span for the loss.")
         parser.add_argument("--neg_span_weight", type=float,default=0.5,
                             help="range: [0,1.0], the weight of negative span for the loss.")
-
-
-
-
         return parser
 
 
@@ -211,18 +207,20 @@ class BertNerTagger(pl.LightningModule):
         span_label_ltoken1 = span_label_ltoken.view(-1)
         loss = self.cross_entropy(all_span_rep1, span_label_ltoken1)
         loss = loss.view(batch_size, n_span)
-        # print('loss 1: ', loss)
+        print('loss 1: ', loss)
         if mode=='train' and self.args.use_span_weight: # when training we should multiply the span-weight
             span_weight = loadall[6]
             loss = loss*span_weight
-            # print('loss 2: ', loss)
+            print('loss 2: ', loss)
 
         loss = torch.masked_select(loss, real_span_mask_ltoken.bool())
 
-        # print("1 loss: ", loss)
+        print("1 loss: ", loss)
         loss= torch.mean(loss)
-        # print("loss: ", loss)
+        print("loss: ", loss)
         predict = self.classifier(all_span_rep) # shape: (bs, n_span, n_class)
+        print("predict: ", predict)
+        a = bbb
 
         return loss
 
